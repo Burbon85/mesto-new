@@ -31,8 +31,7 @@ function handleFormSubmit (evt) {
 popupOpenButtonElement.addEventListener('click', addPopupOpen );
 
 popupCloseButtonElement.addEventListener('click', closePopupOpen );
-// Прикрепляем обработчик к форме:
-// он будет следить за событием “submit” - «отправка»
+
 formElement.addEventListener('submit', handleFormSubmit);
 
 
