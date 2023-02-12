@@ -7,4 +7,4 @@
 *диалоговое окно Попап
 *логика на JavaScript
 
-#### https://burbon85.github.io/Mesto-1/
+#### https://burbon85.github.io/Mesto1/
