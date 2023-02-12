@@ -4,8 +4,11 @@
     justify-content: space-between;
     max-width: 880px;
     align-items: center;
-    border-bottom: 1px solid #545454;
+    border-bottom: 1px solid rgba(84,84,84);
 }
+
+
+
 
 @media screen and (max-width: 390px) {
     .header {

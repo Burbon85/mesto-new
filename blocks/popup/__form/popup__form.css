@@ -1,19 +1,17 @@
-.popup__conteiner {
-    position: absolute;
-    top: 195px;
+.popup__form {
+    position: relative;
     display: flex;
     flex-direction: column;
     background-color: white;
     border-radius: 10px;
     width: 430px;
     box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.15);
-    margin: 0 auto;
-    
+    margin: -195px auto 0 auto;
+     
 }
 
 @media screen and (max-width: 390px) {
-    .popup__conteiner {
+    .popup__form {
         max-width: 282px;
-        top: 123px;
     }
 }

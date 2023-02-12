@@ -1,6 +1,5 @@
 .footer {
     width: 318px;
-    height: 18px;
     margin: 66px 762px 60px 200px;
 }
 
@@ -8,6 +7,6 @@
     .footer {
         margin: 48px auto 36px;
         width: 282px;
-        height: 14px;
+        
     }
   }

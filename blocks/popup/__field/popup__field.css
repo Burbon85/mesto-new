@@ -1,5 +1,5 @@
-.popup__profile {
-    margin: 0 auto 48px;
+.popup__field {
+    margin: 0 auto 30px;
     padding: 0 0 13px;
     width: 358px;
     height: 14px;
@@ -11,12 +11,11 @@
     font-size: 14px;
     line-height: 17px;
     color: #000000;
+
 }
 
 @media screen and (max-width: 390px) {
-    .popup__profile {
+    .popup__field {
         max-width: 238px;
-        margin: 0 auto 45px;
-        
     }
 }

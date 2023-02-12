@@ -1,85 +1,87 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mesto</title>
-    <link rel="stylesheet" href="./pages/index.css">
-</head>
-<body class="page">
-    <header class ="header">
-        <img class="header__logo"  src="images/logo.svg" alt="Логотип" >
-    </header>
-    <main class="content">
-        <section class="profile">
-                <img class="profile__avatar" src="./images/Kusto.jpg" alt="Аватар">
-            <div class="profile__info">
-                <div class="profile__conteiner">
-                <h1 class="profile__title">Жак-Ив Кусто</h1>
-                <button class="profile__edit-button"></button>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mesto</title>
+        <link rel="stylesheet" href="./pages/index.css" />
+    </head>
+    <body class="page">
+        <header class="header">
+            <img class="header__logo" src="images/logo.svg" alt="Логотип" />
+        </header>
+        <main class="content">
+            <section class="profile">
+                <img class="profile__avatar" src="./images/Kusto.jpg" alt="Аватар" />
+                <div class="profile__info">
+                    <div class="profile__container">
+                        <h1 class="profile__title">Жак-Ив Кусто</h1>
+                        <button type="button" class="profile__edit-button"></button>
+                    </div>
+                    <p class="profile__subtitle">Исследователь океана</p>
                 </div>
-                <p class="profile__subtitle">Исследователь океана</p>
+                <button type="button" class="profile__add-button"></button>
+            </section>
+            <section class="elements">
+                <article class="element">
+                    <img class="element__img" src="./images/Karachaevsk.png" alt="Карачаевск" />
+                    <div class="element__container">
+                        <h2 class="element__title">Карачаевск</h2>
+                        <button type="button" class="element__button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__img" src="./images/Elbrus.png" alt="Гора Эльбрус" />
+                    <div class="element__container">
+                        <h2 class="element__title">Гора Эльбрус</h2>
+                        <button type="button" class="element__button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__img" src="./images/Dombay.png" alt="Домбай" />
+                    <div class="element__container">
+                        <h2 class="element__title">Домбай</h2>
+                        <button type="button" class="element__button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__img" src="./images/Elbrus.png" alt="Гора Эльбрус" />
+                    <div class="element__container">
+                        <h2 class="element__title">Гора Эльбрус</h2>
+                        <button type="button" class="element__button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__img" src="./images/Dombay.png" alt="Домбай" />
+                    <div class="element__container">
+                        <h2 class="element__title">Домбай</h2>
+                        <button type="button" class="element__button"></button>
+                    </div>
+                </article>
+                <article class="element">
+                    <img class="element__img" src="./images/Karachaevsk.png" alt="Карачаево-Черкессия" />
+                    <div class="element__container">
+                        <h2 class="element__title">Карачаево-Черкессия</h2>
+                        <button type="button" class="element__button"></button>
+                    </div>
+                </article>
+            </section>
+        </main>
+        <footer class="footer">
+            <p class="footer__author">&copy; 2020 Mesto Russia</p>
+        </footer>
+        <div class="popup">
+            <div class="popup__form">
+                <button type="button" class="popup__close"></button>
+                <h2 class="popup__header">Редактировать профиль</h2>
+                <form class="popup__name">
+                    <input class="popup__field popup__field_1" type="text" name="name" placeholder="Жак-Ив Кусто" value="Жак-Ив Кусто" required />
+                    <input class="popup__field popup__field_2" type="text" name="job" placeholder="Исследователь океана" value="Исследователь океана" required />
+                    <button type="button" class="popup__submit" name="button">Сохранить</button>
+                </form>
             </div>
-            <button class="profile__add-button"></button>      
-        </section>
-        <section class="elements">
-            <div class="element"> 
-                    <img class="element__img" src="./images/Karachaevsk.png" alt="Карачаевск">
-                   <div class="element__conteiner" >
-                    <h1 class="element__title">Карачаевск</h1>
-                    <button class="element__button"></button>
-                    </div>     
-            </div>
-            <div class="element"> 
-                <img class="element__img" src="./images/Elbrus.png" alt="Гора Эльбрус">
-               <div class="element__conteiner" >
-                <h1 class="element__title">Гора Эльбрус</h1>
-                <button class="element__button"></button>
-                </div>     
-            </div>
-            <div class="element"> 
-                <img class="element__img" src="./images/Dombay.png" alt="Домбай">
-               <div class="element__conteiner" >
-                <h1 class="element__title">Домбай</h1>
-                <button class="element__button"></button>
-                </div>     
-            </div>
-            <div class="element"> 
-                <img class="element__img" src="./images/Elbrus.png" alt="Гора Эльбрус">
-               <div class="element__conteiner" >
-                <h1 class="element__title">Гора Эльбрус</h1>
-                <button class="element__button"></button>
-                </div>     
-            </div>
-            <div class="element"> 
-                <img class="element__img" src="./images/Dombay.png" alt="Домбай">
-               <div class="element__conteiner" >
-                <h1 class="element__title">Домбай</h1>
-                <button class="element__button"></button>
-                </div>     
-            </div>
-            <div class="element"> 
-                <img class="element__img" src="./images/Karachaevsk.png" alt="Карачаево-Черкессия">
-               <div class="element__conteiner" >
-                <h1 class="element__title">Карачаево-Черкессия</h1>
-                <button class="element__button"></button>
-                </div>     
-            </div>
-        </section>
-    </main>
-    <footer class="footer">
-        <p class="footer__author">&copy; 2020 Mesto Russia</p>
-    </footer>
-    <section class="popup">
-        <div class="popup__conteiner">
-            <button class="popup__close"></button>
-            <h2 class="popup__header">Редактировать профиль</h2>
-                <input class="popup__name" type="text" placeholder="Жак-Ив Кусто" value="Жак-Ив Кусто" required>
-                <input class="popup__profile" type="text" placeholder="Исследователь океана" value="Исследователь океана" required>
-                <button class="popup__submit">Сохранить</button>
-        </div>   
-    </section>
-    <script src="./scripts/script.js"></script>
-</body>
+        </div>
+        <script src="./scripts/script.js"></script>
+    </body>
 </html>
