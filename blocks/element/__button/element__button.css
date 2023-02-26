@@ -10,8 +10,3 @@
 .element__button:hover {
     opacity: 0.5;
 }
-
-.element__button:active {
-    background-image: url(../../../images/Black\ heart.svg);
-    opacity: 1;
-}
