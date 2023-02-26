@@ -22,7 +22,7 @@ const cards = document.querySelector('.elements');
 const cardTitleInput = document.querySelector('.popup-add__name');
 const cardLinkInput = document.querySelector('.popup-add__link');
 
-const popupCloseButtonImage = ('.popup-image__close')
+const popupCloseButtonImage = document.querySelector('.popup-image__close')
 const popupImage = document.querySelector('.popup-image'); //Открывающаяся картинка
 const popupImageSubtitle = document.querySelector('.popup-image__subtitle'); //подпись картинки
 const popupCardImage = document.querySelector('.popup-image__image'); // увеличенная картинка
