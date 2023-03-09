@@ -27,6 +27,7 @@ const popupImage = document.querySelector('.popup-image'); //Открывающ�
 const popupImageSubtitle = document.querySelector('.popup__subtitle-image'); //подпись картинки
 const popupCardImage = document.querySelector('.popup__image'); // увеличенная картинка
 
+const errorMessage = {'text':'Вы пропустили это поле'};
 
 const initialCards = [
   {
@@ -57,11 +58,20 @@ const initialCards = [
 
 
 function openPopup(popup) {
-  popup.classList.add('popup_opened');  
+  popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEscape )  
 }
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEscape );
+}
+
+function closeByEscape(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened')
+    closePopup(openedPopup)
+  }
 }
 
 function handleFormSubmitProfile (evt) {
@@ -69,6 +79,7 @@ function handleFormSubmitProfile (evt) {
   profileTitle.textContent = nameInput.value;
   profileSubtitle.textContent = jobInput.value;
   closePopup(popupProfile);
+  formProfile.reset();
 }
 
 popups.forEach((item) => {
