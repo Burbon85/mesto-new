@@ -27,6 +27,7 @@ const popupImage = document.querySelector('.popup-image'); //Открывающ�
 const popupImageSubtitle = document.querySelector('.popup__subtitle-image'); //подпись картинки
 const popupCardImage = document.querySelector('.popup__image'); // увеличенная картинка
 
+// const saveButton = document.querySelectorAll('.popup__submit');
 const errorMessage = {'text':'Вы пропустили это поле'};
 
 const initialCards = [
@@ -65,6 +66,8 @@ function openPopup(popup) {
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
   document.removeEventListener('keydown', closeByEscape );
+  formProfile.reset();
+  formCard.reset();
 }
 
 function closeByEscape(evt) {
@@ -99,6 +102,9 @@ function handleFormSubmitCard (evt) {
   prependCard(data);
   closePopup(popupCard);
   formCard.reset();
+  const saveButton = evt.submitter;
+  saveButton.classList.add('popup__submit_inactive');
+  saveButton.disabled = true;
 }
 
 
