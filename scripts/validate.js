@@ -46,17 +46,16 @@ const setEventListeners = (formElement, options) => {
   const buttonElement = formElement.querySelector(options.submitButtonSelector);
 
     toggleButtonState(inputList, buttonElement, options);
-    // toggleButtonState(inputList, buttonElement, inactiveButtonClass);
+    // Реализация  кода, отвечающего за сброс кнопки сохранения через setTimeout. 
+    formElement.addEventListener('reset', () => {
+      setTimeout(() => {toggleButtonState(inputList, buttonElement, options);}, 0);
+    });
   // Обойдём все элементы полученной коллекции
   inputList.forEach((inputElement) => {
     // каждому полю добавим обработчик события input
     inputElement.addEventListener('input', function () {
       checkInputValidity(formElement, inputElement, options);
-      toggleButtonState(inputList, buttonElement, options);
-    // inputElement.addEventListener('input', function () {
-    //   checkInputValidity(formElement, inputElement, options.inactiveButtonClass);
-    //   toggleButtonState(inputList, buttonElement, options.inactiveButtonClass);
-      
+      toggleButtonState(inputList, buttonElement, options);      
     });
   });
 };
@@ -73,16 +72,12 @@ const enableValidation = (options) => {
   // Найдём все формы с указанным классом в DOM,
   // сделаем из них массив методом Array.from
   const formList = Array.from(document.querySelectorAll('.popup__container'));
-   // Переберём полученную коллекцию
+  // Переберём полученную коллекцию
   formList.forEach((formElement) => {
-    formElement.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-    }); const fieldsetList = Array.from(formElement.querySelectorAll('.popup__form'));
-    fieldsetList.forEach((fieldSet) => {
-      setEventListeners(fieldSet, options);
-    });    
+    setEventListeners(formElement, options);
   }); 
 };
+
 
 const hasInvalidInput = (inputList) => {
   // проходим по этому массиву методом some
@@ -99,21 +94,20 @@ const toggleButtonState = (inputList, buttonElement, options) => {
   if (hasInvalidInput(inputList)) {
     // сделай кнопку неактивной
      buttonElement.classList.add(options.inactiveButtonClass);
-     buttonElement.disabled = 'disabled'
+     buttonElement.disabled = true;
   } else {
     // иначе сделай кнопку активной
      buttonElement.classList.remove(options.inactiveButtonClass);
-     buttonElement.disabled = ''
+     buttonElement.disabled = false;
   }
 };
 
-
-function resetValidation() {
-  toggleButtonState();
-inputList.forEach((inputElement) => {
-   hideInputError(inputElement);
-  });
-};
+// function resetValidation() {
+//   toggleButtonState();
+//   inputList.forEach((inputElement) => {
+//    hideInputError(inputElement);
+//   });
+// };
   
   // включение валидации вызовом enableValidation
 // все настройки передаются при вызове
