@@ -70,8 +70,6 @@ export const initialCards = [
   }
 ];
 
-export const cardsContainer = document.querySelector('.element-tamplate').content;
-
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -89,6 +87,14 @@ function closeByEscape(evt) {
     closePopup(openedPopup)
   }
 }
+
+function handleCardClick(name, link) {
+  popupImageSubtitle.textContent = name;
+  popupCardImage.src = link;
+  popupCardImage.alt = name;
+  openPopup(popupImage);
+}
+
 
 function handleFormSubmitProfile (evt) {
   evt.preventDefault(); 
@@ -158,7 +164,7 @@ popupOpenButtonAdd.addEventListener('click', function() {
   formCard.reset();} );
 // Функция создания карточки из класса Card
 function renderCard(data) {
-  const card = new Card(data, '.element-tamplate', openPopup);
+  const card = new Card(data, '.element-tamplate', handleCardClick);
   const cardElement = card.createCard(data);
   return cardElement;
 }
@@ -170,7 +176,7 @@ function prependCard(data) {
 
 initialCards.forEach((data) => {
   const cardElement = renderCard(data);
-  cardsContainer.prepend(cardElement);
+  card.prepend(cardElement);
 });
 
 
