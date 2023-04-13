@@ -133,8 +133,9 @@ function handleCardClick(name, link) {
 
 popupOpenButtonElement.addEventListener('click', function() {
   popupProfileWithForm.openPopup();
-  popupProfileWithForm.setInputValues(userInfo.getUserInfo()); 
-  formProfile.reset();} );
+  return popupProfileWithForm.setInputValues(userInfo.getUserInfo()); 
+  // formProfile.reset();
+} );
 // popupCloseButtons.forEach((button) => {
 //   const popup = button.closest('.popup');
 //   button.addEventListener('click', () => closePopup(popup));
