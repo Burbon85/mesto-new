@@ -156,10 +156,10 @@ function renderCard(data) {
 //   card.prepend(template);
 // }
 
-initialCards.forEach((data) => {
-  const cardElement = renderCard(data);
-  sectionCardElement.prepend(cardElement);
-});
+// initialCards.forEach((data) => {
+//   const cardElement = renderCard(data);
+//   sectionCardElement.prepend(cardElement);
+// });
 
 //создание секции с карточками через класс Section
 const cardsSection = new Section({items: initialCards, renderer: (item) => { 
