@@ -1,17 +1,17 @@
-import './pages/index.css'; // добавьте импорт главного файла стилей 
+import './index.css'; // добавьте импорт главного файла стилей 
 
-import FormValidator from './scripts/FormValidator.js';
-import Card from './scripts/Card.js';
-import PopupWithImage from './scripts/PopupWithImage.js';
-import PopupWithForm from './scripts/PopupWithForm.js';
-import Section from './scripts/Section.js';
-import UserInfo from './scripts/UserInfo.js';
-import arhyz from './images/arkhyz.jpg';
-import chelyabinsk from './images/chelyabinsk-oblast.jpg';
-import ivanovo from './images/ivanovo.jpg';
-import kamchatka from './images/kamchatka.jpg';
-import kholmogorsky from './images/kholmogorsky.jpg';
-import baikal from './images/baikal.jpg';
+import FormValidator from '../scripts/FormValidator.js';
+import Card from '../scripts/Card.js';
+import PopupWithImage from '../scripts/PopupWithImage.js';
+import PopupWithForm from '../scripts/PopupWithForm.js';
+import Section from '../scripts/Section.js';
+import UserInfo from '../scripts/UserInfo.js';
+import arhyz from '../images/arkhyz.jpg'
+import chelyabinsk from '../images/chelyabinsk-oblast.jpg';
+import ivanovo from '../images/ivanovo.jpg';
+import kamchatka from '../images/kamchatka.jpg';
+import kholmogorsky from '../images/kholmogorsky.jpg';
+import baikal from '../images/baikal.jpg';
 
 
 export const popups = document.querySelectorAll('.popup'); //все попапы
