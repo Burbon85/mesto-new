@@ -1,9 +1,17 @@
-import FormValidator from './FormValidator.js';
-import Card from './Card.js';
-import PopupWithImage from './PopupWithImage.js';
-import PopupWithForm from './PopupWithForm.js';
-import Section from './Section.js';
-import UserInfo from './UserInfo.js';
+import './pages/index.css'; // добавьте импорт главного файла стилей 
+
+import FormValidator from './scripts/FormValidator.js';
+import Card from './scripts/Card.js';
+import PopupWithImage from './scripts/PopupWithImage.js';
+import PopupWithForm from './scripts/PopupWithForm.js';
+import Section from './scripts/Section.js';
+import UserInfo from './scripts/UserInfo.js';
+import arhyz from './images/arkhyz.jpg';
+import chelyabinsk from './images/chelyabinsk-oblast.jpg';
+import ivanovo from './images/ivanovo.jpg';
+import kamchatka from './images/kamchatka.jpg';
+import kholmogorsky from './images/kholmogorsky.jpg';
+import baikal from './images/baikal.jpg';
 
 
 export const popups = document.querySelectorAll('.popup'); //все попапы
@@ -50,47 +58,29 @@ export const obj = {
 export const initialCards = [
   {
     name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
+    link: arhyz
   },
   {
     name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
+    link: chelyabinsk
   },
   {
     name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
+    link: ivanovo
   },
   {
     name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
+    link: kamchatka
   },
   {
     name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
+    link: kholmogorsky
   },
   {
     name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
+    link: baikal
   }
 ];
-
-
-// function openPopup(popup) {
-//   popup.classList.add('popup_opened');
-//   document.addEventListener('keydown', closeByEscape )  
-// }
-
-// function closePopup(popup) {
-//   popup.classList.remove('popup_opened');
-//   document.removeEventListener('keydown', closeByEscape );
-// }
-
-// function closeByEscape(evt) {
-//   if (evt.key === 'Escape') {
-//     const openedPopup = document.querySelector('.popup_opened')
-//     closePopup(openedPopup)
-//   }
-// }
 
 // Создание попапа картинки с помощью класса PopupWithImage
 const popupWithImage = new PopupWithImage('.popup-image', popupCardImage, popupImageSubtitle); 
@@ -151,6 +141,11 @@ function renderCard(data) {
   return cardElement;
 }
 
+// function createdCard(data) {
+//   const cardElement = renderCard(data); 
+//   sectionCardElement.prepend(cardElement);
+// } 
+
 // function prependCard(data) {
 //   const template = renderCard(data);
 //   card.prepend(template);
@@ -160,6 +155,7 @@ function renderCard(data) {
 //   const cardElement = renderCard(data);
 //   sectionCardElement.prepend(cardElement);
 // });
+initialCards.forEach(renderCard);
 
 //создание секции с карточками через класс Section
 const cardsSection = new Section({items: initialCards, renderer: (item) => { 
@@ -196,7 +192,7 @@ const popupCardWithForm = new PopupWithForm({
         name: formValues["place"],
         link: formValues["link"]
     };
-    renderCard(data);
+    cardsSection.addItem(renderCard(data));
     popupCardWithForm.closePopup();
     formCard.reset();
   }
