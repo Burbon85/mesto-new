@@ -17,11 +17,5 @@
 @media screen and (max-width: 1050px) {
     .popup__field {
         max-width: 238px;
-    }
-
-    
-}
-
-.popup__field:invalid {
-    border-bottom-color: red;
+    }    
 }

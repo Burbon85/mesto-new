@@ -8,7 +8,6 @@ export default class PopupWithForm extends Popup {
         this._inputList = this._popup.querySelectorAll('.popup__field');
     }
 
-
     _getInputValues() {
         this._formValues = {};
         this._inputList.forEach(input => {
@@ -24,7 +23,6 @@ export default class PopupWithForm extends Popup {
         evt.preventDefault();
         this._handleFormSubmit(this._getInputValues());
         });
-
     }
 
     setInputValues(data) {
@@ -33,11 +31,8 @@ export default class PopupWithForm extends Popup {
         })
     }
 
-    closePopup() {
-        super.closePopup();
+    close() {
+        super.close();
         this._formElement.reset();
-      }
-
-
-
+    }
 }
