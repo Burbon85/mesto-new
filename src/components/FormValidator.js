@@ -12,25 +12,10 @@ export default class FormValidator {
   this._buttonElement = this._formElement.querySelector(this._submitButtonSelector);
   };
 
-// // Функция isValid теперь принимает formElement и inputElement,
-// // а не берёт их из внешней области видимости
-// _isValid = (formElement, inputElement) => {
-//   if (!inputElement.validity.valid) {
-//     // showInputError теперь получает параметром форму, в которой
-//     // находится проверяемое поле, и само это поле
-//     this._showInputError(formElement, inputElement, inputElement.validationMessage);
-//   } else {
-//     // hideInputError теперь получает параметром форму, в которой
-//     // находится проверяемое поле, и само это поле
-//     this._hideInputError(formElement, inputElement);
-//   }
-// };
-
 _showInputError = (inputElement, errorMessage) => {
   // Находим элемент ошибки внутри самой функции
   const errorElement = document.querySelector(`#${inputElement.id}-error`);
   // Остальной код такой же
-  // inputElement.classList.add(this._inputError);
   errorElement.textContent = errorMessage;
   errorElement.classList.add(this._activeError);
 };
@@ -39,7 +24,6 @@ _hideInputError = (inputElement) => {
   // Находим элемент ошибки
   const errorElement = document.querySelector(`#${inputElement.id}-error`);
   // Остальной код такой же
-  // inputElement.classList.remove(this._inputError);
   errorElement.classList.remove(this._activeError);
   errorElement.textContent = '';
 };
@@ -101,5 +85,4 @@ enableValidation = () => {
   }); 
   this._setEventListeners();
 };
-
 }
