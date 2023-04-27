@@ -12,6 +12,7 @@ import ivanovo from '../images/ivanovo.jpg';
 import kamchatka from '../images/kamchatka.jpg';
 import kholmogorsky from '../images/kholmogorsky.jpg';
 import baikal from '../images/baikal.jpg';
+import PopupWithConfirmation from '../components/PopupWithConfirmation.js';
 import Api from '../components/Api.js';
 
 export const popups = document.querySelectorAll('.popup'); //все попапы
@@ -88,6 +89,9 @@ export const initialCards = [
 // Создание попапа картинки с помощью класса PopupWithImage
 const popupWithImage = new PopupWithImage('.popup-image', popupCardImage, popupImageSubtitle); 
 popupWithImage.setEventListeners();
+
+const popupWithConfirmation = new PopupWithConfirmation('.popup-delete');
+popupWithConfirmation.setEventListeners();
 
 //Данные пользователя
 const userInfo = new UserInfo({ 
@@ -177,7 +181,8 @@ function renderCard(data) {
   '.element-tamplate',
   userInfo.getUserId());
   const cardTemplate = card.createCard();
-  return cardTemplate;
+  // console.log(cardTemplate);
+  return cardTemplate;  
 }
 
 // создание попапа с профилем с помощью класса PopupWithForm
