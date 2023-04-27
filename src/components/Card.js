@@ -37,9 +37,13 @@ export default class Card {
             this._handleCardClick(this._name, this._link)
         });
 
-        this._deleteButton.addEventListener ('click', () => {
-            this._deleteCard();
-        });
+        if (this._ownerCardUserId === this._userId) {
+            this._deleteButton.addEventListener('click', () => {
+            {
+            this._deleteCard(this._cardId);}
+          });} else {
+            this._deleteButton.remove();
+          }
 
         this._cardLikeButton.addEventListener ('click', () => {
             this._handleLike(this._cardId);
@@ -50,7 +54,7 @@ export default class Card {
         if (this._ownerCardUserId === this._userId) {
             this._handleDelete(this._cardId);
             } else {
-        this._deleteButton.closest('.element').remove()
+        this._deleteButton.closest('.element').remove();
         }
     }
     
@@ -68,4 +72,7 @@ export default class Card {
         }
     }
 
+    remove = () => {
+        this._cardTemplate.closest('.element').remove();
+    }
 }

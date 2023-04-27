@@ -99,6 +99,7 @@ const userInfo = new UserInfo({
   profileJob: profileSubtitle,
   profileAvatar: avatarProfile
 })
+// console.log(userInfo);
 
 const api = new Api({
   baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-64',
@@ -137,7 +138,7 @@ popupOpenButtonAdd.addEventListener('click', function() {
 });
 avatarHoverProfile.addEventListener('click', function() {
   popupAvatarWithForm.open();
-  formAvatar.reset();
+  // formAvatar.reset();
 });
 
 
@@ -192,7 +193,7 @@ const popupProfileWithForm = new PopupWithForm({
     const data = {
       name: formValues["name"],
       about: formValues["job"]
-    }
+    }    
     popupProfileWithForm.setSubmitButtonText("Сохранение...");
     api.patchUserInfo(data)
       .then(() => {
@@ -216,16 +217,13 @@ const popupCardWithForm = new PopupWithForm({
     popupCardWithForm.setSubmitButtonText("Создание...");
     api.createNewCard(formValues)
     .then((response) => {
-      sectionCard.addItem(renderCard(response));
-      cardPopup.close();
+      cardsSection.addItem(renderCard(response));
+      popupCardWithForm.close();
     })
     .catch(error => console.log(error))
     .finally(() => {
       popupCardWithForm.setSubmitButtonText("Создать");
     });
-    // cardsSection.addItem(renderCard(data));
-    // popupCardWithForm.close();
-    // formCard.reset();
   }
 })
 popupCardWithForm.setEventListeners();
@@ -233,7 +231,7 @@ popupCardWithForm.setEventListeners();
 const popupAvatarWithForm = new PopupWithForm({
   popupSelector: '.popup-avatar',
   handleFormSubmit: (formValues) => {
-    const avatar = formValues['avatar-input'];
+    const avatar = formValues['avatar'];
 
     popupAvatarWithForm.setSubmitButtonText("Сохранение...");
     api.changeAvatar(avatar)
