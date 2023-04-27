@@ -1,5 +1,5 @@
 export default class Card {
-    constructor({data, handleCardClick, handleLike, handleDelete}, tamplate) {
+    constructor({data, handleCardClick, handleLike, handleDelete}, tamplate, userId) {
         this._name = data.name;
         this._link = data.link;
         this._tamplate = tamplate;
