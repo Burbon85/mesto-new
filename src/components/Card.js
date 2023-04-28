@@ -43,6 +43,7 @@ export default class Card {
             this._deleteCard(this._cardId);}
           });} else {
             this._deleteButton.remove();
+            this._deleteButton = null;
           }
 
         this._cardLikeButton.addEventListener ('click', () => {

@@ -33,13 +33,13 @@ export default class Api {
         return Promise.all([this._getUserInfo(), this._getInitialCards()]);
       }
 
-      patchUserInfo(data) {
+      patchUserInfo({name, about}) {
         return fetch(`${this._url}/users/me`, {
           method: 'PATCH',
           headers: this._headers,
           body: JSON.stringify({
-            name: data.name,
-            about: data.about
+            name: name,
+            about: about
           })
         })
         .then(this._getResponseData);
