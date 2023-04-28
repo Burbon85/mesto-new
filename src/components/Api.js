@@ -81,7 +81,7 @@ export default class Api {
         .then(this._getResponseData);
       }
     
-      changeAvatar(avatar) {
+      patchAvatar(avatar) {
         return fetch(`${this._url}/users/me/avatar`, {
           method: 'PATCH',
           headers: this._headers,

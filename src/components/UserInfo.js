@@ -2,7 +2,7 @@ export default class UserInfo {
     constructor({profileName, profileJob, profileAvatar}) {
         this._profileName = profileName;
         this._profileJob = profileJob;
-        this._avatarProfile = profileAvatar;
+        this._profileAvatar = profileAvatar;
     }
 
     getUserInfo() {
@@ -20,7 +20,7 @@ export default class UserInfo {
     }
 
     setUserAvatar(avatar) {
-        this._avatarProfile.src = avatar;
+        this._profileAvatar.src = avatar;
       }
 
     getUserId() {

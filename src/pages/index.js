@@ -231,10 +231,10 @@ popupCardWithForm.setEventListeners();
 const popupAvatarWithForm = new PopupWithForm({
   popupSelector: '.popup-avatar',
   handleFormSubmit: (formValues) => {
-    const avatar = formValues['avatar'];
+    const avatar = formValues["avatar"];
 
     popupAvatarWithForm.setSubmitButtonText("Сохранение...");
-    api.changeAvatar(avatar)
+    api.patchAvatar(avatar)
       .then(() => {
         popupAvatarWithForm.close();
         userInfo.setUserAvatar(avatar);
